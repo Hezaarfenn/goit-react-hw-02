@@ -1,0 +1,12 @@
+.options {
+    display: flex;
+    gap: 5px;
+}
+
+.options button {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}

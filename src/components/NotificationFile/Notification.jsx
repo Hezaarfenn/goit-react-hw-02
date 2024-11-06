@@ -1,8 +1,8 @@
 
 
-const Notification = () => {
+const Notification = ({ message }) => {
   return (
-    <div>Notification</div>
+    <p>{message}</p>
   )
 }
 
