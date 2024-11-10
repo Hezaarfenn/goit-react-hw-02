@@ -7,10 +7,15 @@ import Feedback from './components/FeedbackFile/Feedback.jsx';
 import Notification from './components/NotificationFile/Notification.jsx';
 
 function App() {
-  const [feedback, setFeedback] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
+  const [feedback, setFeedback] = useState(() => {
+    const storedFeedback = localStorage.getItem('feedback');
+    return storedFeedback
+      ? JSON.parse(storedFeedback)
+      : {
+          good: 0,
+          neutral: 0,
+          bad: 0,
+        };
   });
 
   const updateFeedback = (feedbackType) => {
@@ -45,7 +50,7 @@ function App() {
         <Options
           updateFeedback={updateFeedback}
           resetFeedback={resetFeedback}
-          totolFeedback={totalFeedback}
+          totalFeedback={totalFeedback}
         />
 
         {totalFeedback > 0 ? (
